@@ -190,7 +190,7 @@ impl From<ServerDeviceIdentifier> for UserConfigDeviceIdentifier {
 
 #[derive(Default, Debug, Getters)]
 #[getset(get = "pub")]
-struct ExternalDeviceConfiguration {
+pub struct ExternalDeviceConfiguration {
   allow_list: Vec<String>,
   deny_list: Vec<String>,
   reserved_indexes: HashMap<u32, ServerDeviceIdentifier>,
@@ -515,6 +515,15 @@ pub fn load_protocol_configs(
   }
 
   Ok(())
+}
+
+
+pub fn load_protocol_configs_no_dm(
+  main_config_str: Option<String>,
+  user_config_str: Option<String>,
+  skip_version_check: bool,
+) -> Result<ExternalDeviceConfiguration, ButtplugDeviceError> {
+  load_protocol_configs_internal(main_config_str, user_config_str, skip_version_check)
 }
 
 pub fn create_test_dcm(allow_raw_messages: bool) -> DeviceConfigurationManager {
