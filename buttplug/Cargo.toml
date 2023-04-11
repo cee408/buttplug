@@ -37,7 +37,7 @@ xinput-manager=["server"]
 btleplug-manager=["server", "btleplug"]
 serial-manager=["server", "serialport"]
 lovense-dongle-manager=["server", "serialport", "hidapi"]
-lovense-connect-service-manager=["server","reqwest"]
+lovense-connect-service-manager=["server", "reqwest"]
 websocket-server-manager=["server", "websockets"]
 # Runtime managers
 tokio-runtime=["tokio/rt-multi-thread", "async-tungstenite/tokio-runtime", "async-tungstenite/tokio-native-tls"]
@@ -88,6 +88,7 @@ os_info = "3.6.0"
 jsonschema = { version = "0.16.1", default-features = false, features = ["resolve-file"] }
 derivative = "2.2.0"
 tokio-stream = "0.1.11"
+diesel = { version = "2.0.3", default-features = false, features = ["sqlite"] }
 
 [dev-dependencies]
 serde_yaml = "0.9.17"
