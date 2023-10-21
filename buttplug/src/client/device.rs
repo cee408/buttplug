@@ -760,4 +760,5 @@ impl fmt::Debug for ButtplugClientDevice {
       .finish()
   }
 }
+
 finish

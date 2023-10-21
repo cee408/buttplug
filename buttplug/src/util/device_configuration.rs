@@ -564,3 +564,4 @@ pub fn create_test_dcm(allow_raw_messages: bool) -> DeviceConfigurationManager {
     .finish()
     .expect("If this fails, the whole library goes with it.")
 }
+finish
