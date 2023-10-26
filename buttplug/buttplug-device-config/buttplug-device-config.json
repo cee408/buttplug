@@ -1,7 +1,7 @@
 {
   "version": {
     "major": 2,
-    "minor": 18
+    "minor": 19
   },
   "protocols": {
     "lovense": {
@@ -1276,7 +1276,8 @@
           "Fugu2",
           "Gballs2",
           "GBalls3",
-          "FM-LILAC-101"
+          "FM-LILAC-101",
+          "Xone"
         ],
         "services": {
           "78667579-7b48-43db-b8c5-7928a6b0a335": {
@@ -1388,6 +1389,23 @@
             "FM-LILAC-101"
           ],
           "name": "Femometer Lilac"
+        },
+        {
+          "identifier": [
+            "Xone"
+          ],
+          "name": "MagicMotion Xone",
+          "messages": {
+            "ScalarCmd": [
+              {
+                "StepRange": [
+                  0,
+                  100
+                ],
+                "ActuatorType": "Oscillate"
+              }
+            ]
+          }
         }
       ]
     },
@@ -1397,7 +1415,9 @@
           "Eidolon",
           "Lipstick",
           "Sword",
-          "Curve"
+          "Curve",
+          "Solstice X",
+          "funwand"
         ],
         "services": {
           "78667579-7b48-43db-b8c5-7928a6b0a335": {
@@ -1476,6 +1496,36 @@
               }
             ]
           }
+        },
+        {
+          "identifier": [
+            "Solstice X"
+          ],
+          "name": "MagicMotion Solstice X",
+          "messages": {
+            "ScalarCmd": [
+              {
+                "StepRange": [
+                  0,
+                  100
+                ],
+                "ActuatorType": "Vibrate"
+              },
+              {
+                "StepRange": [
+                  0,
+                  100
+                ],
+                "ActuatorType": "Vibrate"
+              }
+            ]
+          }
+        },
+        {
+          "identifier": [
+            "funwand"
+          ],
+          "name": "MagicMotion Zenith"
         }
       ]
     },
@@ -1759,7 +1809,9 @@
     "mysteryvibe-v2": {
       "btle": {
         "names": [
-          "6907 MV1"
+          "6907 MV1",
+          "6908 MV1",
+          "6909 MV1"
         ],
         "services": {
           "f0006900-110c-478b-b74b-6f403b364a9c": {
@@ -1802,6 +1854,96 @@
             "6907 MV1"
           ],
           "name": "MysteryVibe Tenuto Mini"
+        },
+        {
+          "identifier": [
+            "6908 MV1"
+          ],
+          "name": "MysteryVibe Crescendo 2",
+          "messages": {
+            "ScalarCmd": [
+              {
+                "StepRange": [
+                  0,
+                  56
+                ],
+                "ActuatorType": "Vibrate"
+              },
+              {
+                "StepRange": [
+                  0,
+                  56
+                ],
+                "ActuatorType": "Vibrate"
+              },
+              {
+                "StepRange": [
+                  0,
+                  56
+                ],
+                "ActuatorType": "Vibrate"
+              },
+              {
+                "StepRange": [
+                  0,
+                  56
+                ],
+                "ActuatorType": "Vibrate"
+              },
+              {
+                "StepRange": [
+                  0,
+                  56
+                ],
+                "ActuatorType": "Vibrate"
+              },
+              {
+                "StepRange": [
+                  0,
+                  56
+                ],
+                "ActuatorType": "Vibrate"
+              }
+            ]
+          }
+        },
+        {
+          "identifier": [
+            "6909 MV1"
+          ],
+          "name": "MysteryVibe Tenuto 2",
+          "messages": {
+            "ScalarCmd": [
+              {
+                "StepRange": [
+                  0,
+                  56
+                ],
+                "ActuatorType": "Vibrate"
+              },
+              {
+                "StepRange": [
+                  0,
+                  56
+                ],
+                "ActuatorType": "Vibrate"
+              },
+              {
+                "StepRange": [
+                  0,
+                  56
+                ],
+                "ActuatorType": "Vibrate"
+              },
+              {
+                "StepRange": [
+                  0,
+                  56
+                ],
+                "ActuatorType": "Vibrate"
+              }
+            ]
+          }
         }
       ]
     },
@@ -3680,7 +3822,8 @@
         "services": {
           "0000ae00-0000-1000-8000-00805f9b34fb": {
             "tx": "0000ae01-0000-1000-8000-00805f9b34fb",
-            "rx": "0000ae02-0000-1000-8000-00805f9b34fb"
+            "rx": "0000ae02-0000-1000-8000-00805f9b34fb",
+            "txmode": "0000ae10-0000-1000-8000-00805f9b34fb"
           }
         }
       },
@@ -4786,6 +4929,34 @@
             }
           ],
           "FleshlightLaunchFW12Cmd": {}
+        }
+      }
+    },
+    "fredorch-rotary": {
+      "btle": {
+        "names": [
+          "M1_*"
+        ],
+        "services": {
+          "0000ae10-0000-1000-8000-00805f9b34fb": {
+            "tx": "0000ae01-0000-1000-8000-00805f9b34fb",
+            "rx": "0000ae02-0000-1000-8000-00805f9b34fb"
+          }
+        }
+      },
+      "defaults": {
+        "name": "Fredorch Rotary Device",
+        "messages": {
+          "ScalarCmd": [
+            {
+              "StepRange": [
+                0,
+                20
+              ],
+              "ActuatorType": "Oscillate",
+              "FeatureDescriptor": "Fucking Machine Oscillation Speed"
+            }
+          ]
         }
       }
     },

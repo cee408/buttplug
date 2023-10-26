@@ -93,7 +93,7 @@
 #   user in the user device config file.
 version:
   major: 2
-  minor: 18
+  minor: 19
 protocols:
   lovense:
     # Lovense is special. Special in oh so many ways.
@@ -730,6 +730,7 @@ protocols:
         - Gballs2
         - GBalls3
         - FM-LILAC-101
+        - Xone
       services:
         78667579-7b48-43db-b8c5-7928a6b0a335:
           tx: 78667579-a914-49a4-8333-aa3c0cd8fedc
@@ -786,6 +787,13 @@ protocols:
       - identifier:
           - FM-LILAC-101
         name: Femometer Lilac
+      - identifier:
+          - Xone
+        name: MagicMotion Xone
+        messages:
+          ScalarCmd:
+            - StepRange: [ 0, 100 ]
+              ActuatorType: Oscillate
   magic-motion-2:
     btle:
       names:
@@ -793,6 +801,8 @@ protocols:
         - Lipstick # Awaken
         - Sword # Equinox
         - Curve # Solstice
+        - Solstice X
+        - funwand # Zenith
       services:
         78667579-7b48-43db-b8c5-7928a6b0a335:
           tx: 78667579-a914-49a4-8333-aa3c0cd8fedc
@@ -828,6 +838,18 @@ protocols:
               ActuatorType: Vibrate
             - StepRange: [0, 100]
               ActuatorType: Vibrate
+      - identifier:
+          - Solstice X
+        name: MagicMotion Solstice X
+        messages:
+          ScalarCmd:
+            - StepRange: [0, 100]
+              ActuatorType: Vibrate
+            - StepRange: [0, 100]
+              ActuatorType: Vibrate
+      - identifier:
+          - funwand
+        name: MagicMotion Zenith
   magic-motion-3:
     btle:
       names:
@@ -958,6 +980,8 @@ protocols:
     btle:
       names:
         - "6907 MV1"
+        - "6908 MV1"
+        - "6909 MV1"
       services:
         f0006900-110c-478b-b74b-6f403b364a9c:
           txmode: f0006901-110c-478b-b74b-6f403b364a9c
@@ -976,6 +1000,36 @@ protocols:
       - identifier:
           - "6907 MV1"
         name: MysteryVibe Tenuto Mini
+      - identifier:
+          - "6908 MV1"
+        name: MysteryVibe Crescendo 2
+        messages:
+          ScalarCmd:
+            - StepRange: [ 0, 56 ]
+              ActuatorType: Vibrate
+            - StepRange: [ 0, 56 ]
+              ActuatorType: Vibrate
+            - StepRange: [ 0, 56 ]
+              ActuatorType: Vibrate
+            - StepRange: [ 0, 56 ]
+              ActuatorType: Vibrate
+            - StepRange: [ 0, 56 ]
+              ActuatorType: Vibrate
+            - StepRange: [ 0, 56 ]
+              ActuatorType: Vibrate
+      - identifier:
+          - "6909 MV1"
+        name: MysteryVibe Tenuto 2
+        messages:
+          ScalarCmd:
+            - StepRange: [ 0, 56 ]
+              ActuatorType: Vibrate
+            - StepRange: [ 0, 56 ]
+              ActuatorType: Vibrate
+            - StepRange: [ 0, 56 ]
+              ActuatorType: Vibrate
+            - StepRange: [ 0, 56 ]
+              ActuatorType: Vibrate
   picobong:
     btle:
       names:
@@ -1882,6 +1936,7 @@ protocols:
         0000ae00-0000-1000-8000-00805f9b34fb:
           tx: 0000ae01-0000-1000-8000-00805f9b34fb
           rx: 0000ae02-0000-1000-8000-00805f9b34fb
+          txmode: 0000ae10-0000-1000-8000-00805f9b34fb
     defaults:
       name: Svakom Sam Neo
       messages:
@@ -2443,6 +2498,21 @@ protocols:
           - StepRange: [0, 150]
             ActuatorType: Position
         FleshlightLaunchFW12Cmd: {}
+  fredorch-rotary:
+    btle:
+      names:
+        - M1_*
+      services:
+        0000ae10-0000-1000-8000-00805f9b34fb:
+          tx: 0000ae01-0000-1000-8000-00805f9b34fb
+          rx: 0000ae02-0000-1000-8000-00805f9b34fb
+    defaults:
+      name: Fredorch Rotary Device
+      messages:
+        ScalarCmd:
+          - StepRange: [0, 20]
+            ActuatorType: Oscillate
+            FeatureDescriptor: Fucking Machine Oscillation Speed
   mizzzee:
     btle:
       names:
